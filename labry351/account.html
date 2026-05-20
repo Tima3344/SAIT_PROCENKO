@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBRIFOLIO — Личный кабинет</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__container">
+            <a href="index.html" class="header__logo">LIBRIFOLIO</a>
+            <button class="header__burger" aria-label="Открыть меню">MENU</button>
+            <nav class="header__nav">
+                <a href="index.html" class="header__link">Главная</a>
+                <a href="products.html" class="header__link">Каталог книг</a>
+                <a href="registration.html" class="header__link">Регистрация</a>
+                <a href="account.html" class="header__link header__link--active">Личный кабинет</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="dashboard">
+            
+            <aside class="dashboard__sidebar">
+                <div class="user-profile">
+                    <div class="user-profile__avatar">
+                        <img src="images/avatar.jpg" alt="Аватар пользователя" class="user-profile__img">
+                    </div>
+                    <h2 class="user-profile__name">Алексей</h2>
+                </div>
+                <nav class="dashboard__nav">
+                    <a href="#" class="dashboard__link dashboard__link--active">Моя полка</a>
+                    <a href="#" class="dashboard__link">Настройки</a>
+                </nav>
+                <button class="dashboard__logout-btn">Выйти</button>
+            </aside>
+
+            <section class="dashboard__main">
+                <h2 class="section-title">Мои избранные книги</h2>
+                
+                <div class="catalog-grid">
+                    <article class="book-card">
+                        <div class="book-card__image-wrapper">
+                            <img src="images/book2.jpg" alt="Обложка" class="book-card__image">
+                        </div>
+                        <h3 class="book-card__title">Дюна</h3>
+                        <p class="book-card__author">Фрэнк Герберт</p>
+                        <button class="book-card__button book-card__button--primary">Читать</button>
+                    </article>
+                    
+                    <article class="book-card">
+                        <div class="book-card__image-wrapper">
+                            <img src="images/book1.jpg" alt="Обложка" class="book-card__image">
+                        </div>
+                        <h3 class="book-card__title">Мастер и Маргарита</h3>
+                        <p class="book-card__author">М. А. Булгаков</p>
+                        <button class="book-card__button book-card__button--primary">Читать</button>
+                    </article>
+                </div>
+
+                <h2 class="section-title" style="margin-top: 40px;">Настройки профиля</h2>
+                <div class="account-form-box">
+                    <form novalidate>
+                        <div class="form-group">
+                            <label class="form-group__label">Имя</label>
+                            <input class="form-group__input" type="text" value="Алексей">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-group__label">Новый пароль</label>
+                            <input class="form-group__input" type="password" placeholder="••••••••">
+                        </div>
+                        <button class="form-box__submit-btn" type="button" style="max-width: 200px;">Сохранить изменения</button>
+                    </form>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__info">
+                <h4 class="footer__title">LIBRIFOLIO</h4>
+                <p class="footer__text">+7 (999) 123-45-67</p>
+                <p class="footer__text">Email: info@librifolio.com</p>
+            </div>
+            <div class="footer__socials">
+                <h4 class="footer__title">Мы в соцсетях</h4>
+                <a href="#" class="footer__link">Telegram</a>
+                <a href="#" class="footer__link">VKontakte</a>
+            </div>
+        </div>
+        <div class="footer__bottom">&copy; 2026 LIBRIFOLIO.</div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

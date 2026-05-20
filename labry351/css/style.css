@@ -1,0 +1,541 @@
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    color: #333333;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+ 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ 
+button, input, select {
+    font-family: inherit;
+    font-size: 16px;
+}
+ 
+/* Основной контейнер */
+.main-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+ 
+/* Заголовки секций */
+.section-title {
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #111111;
+}
+ 
+/* Шапка сайта */
+.header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+ 
+.header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.header__logo {
+    font-weight: bold;
+    font-size: 24px;
+    color: #333333;
+}
+ 
+.header__burger {
+    display: none;
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+ 
+.header__nav {
+    display: flex;
+    gap: 20px;
+}
+ 
+.header__link {
+    font-size: 15px;
+    color: #666666;
+}
+ 
+.header__link:hover {
+    color: #111;
+}
+ 
+.header__link--active {
+    color: #111;
+    font-weight: bold;
+}
+ 
+/* Промо-блок с поиском */
+.promo {
+    background-color: #f9f9f9;
+    background-image: url(/images/knig.webp);
+    border: 1px solid #e0e0e0;
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    filter:grayscale(30%);
+    
+}
+ 
+.promo__title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+ 
+.promo__search-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+}
+ 
+.promo__input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-right: none;
+    outline: none;
+}
+ 
+.promo__button {
+    padding: 15px 25px;
+    background-color: #723003;
+    color: #ffffff;
+    border: 1px solid #723003; 
+    cursor: pointer;
+}
+ 
+/* Блок популярных жанров */
+.genres {
+    margin-bottom: 40px;
+}
+ 
+.genres__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+ 
+.genres__card {
+    background-color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+    border: 3px solid #723003;
+}
+ 
+.novelties__list, .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+ 
+/* Карточка книги */
+.book-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+ 
+/* ИСПРАВЛЕНО: Убран серый фон прямоугольника и рамка */
+.book-card__image-wrapper {
+    background-color: #ffffff;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+ 
+.book-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+}
+ 
+.book-card__title {
+    font-size: 17px;
+    margin-bottom: 5px;
+    color: #111111;
+}
+ 
+.book-card__author {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 10px;
+}
+ 
+.book-card__tag {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: #e5e8eb;
+    color: #555555;
+    font-size: 12px;
+    padding: 2px 6px;
+    margin-bottom: 15px;
+}
+ 
+.book-card__buttons {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+ 
+.book-card__button {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #7e3f00;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+ 
+.book-card__button--fav {
+    background-color: #ffffff;
+    color: #7e3f00;
+    border: 1px solid #7e3f00;
+}
+ 
+/* --- ПАНЕЛЬ КАТАЛОГА (Поиск и фильтр на странице продуктов) --- */
+.catalog-panel {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 15px;
+}
+ 
+.catalog-panel__search, .catalog-panel__select {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+}
+ 
+.catalog-panel__search {
+    flex: 1;
+}
+ 
+/* --- ФОРМЫ (Вход и Регистрация) --- */
+.form-box {
+    border: 1px solid #e0e0e0;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+}
+ 
+.form-box__title {
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+}
+ 
+.form-group {
+    margin-bottom: 15px;
+}
+ 
+.form-group__label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+ 
+.form-group__input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    outline: none;
+}
+ 
+.form-box__checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+ 
+.form-box__submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #7e3f00;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+ 
+.form-box__footer {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #666666;
+}
+ 
+/* --- ЛИЧНЫЙ КАБИНЕТ --- */
+.dashboard {
+    display: flex;
+    gap: 30px;
+}
+ 
+.dashboard__sidebar {
+    flex: 1;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    height: fit-content;
+}
+ 
+.dashboard__main {
+    flex: 3;
+}
+ 
+.dashboard__main .catalog-grid,
+.dashboard__main .novelties__list {
+    grid-template-columns: repeat(3, 1fr);
+}
+ 
+.user-profile {
+    text-align: center;
+    margin-bottom: 15px;
+}
+ 
+.user-profile__name {
+    font-size: 19px;
+    font-weight: bold;
+}
+ 
+.dashboard__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+ 
+.dashboard__link {
+    padding: 10px;
+    border: 1px solid transparent;
+}
+ 
+.dashboard__link--active, .dashboard__link:hover {
+    background-color: #f5f5f5;
+    border-color: #e0e0e0;
+}
+ 
+.dashboard__logout-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: 1px solid #cc0000;
+    color: #cc0000;
+    cursor: pointer;
+}
+ 
+/* Подвал сайта */
+.footer {
+    background-color: #222222;
+    color: #cccccc;
+    margin-top: auto;
+    border-top: 4px solid #7e3f00;
+}
+ 
+.footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+ 
+.footer__info, .footer__socials {
+    flex: 1;
+    min-width: 220px;
+}
+ 
+.footer__title {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+ 
+.footer__text {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+ 
+.footer__link {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #cccccc;
+    transition: color 0.2s ease;
+}
+ 
+.footer__link:hover {
+    color: #7e3f00;
+    text-decoration: underline;
+}
+ 
+.footer__bottom {
+    background-color: #171717;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    border-top: 1px solid #333333;
+    color: #888888;
+}
+ 
+/* --- Адаптивность (Медиа-запросы) --- */
+@media (max-width: 1024px) {
+    .novelties__list, .catalog-grid, .dashboard__main .catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+ 
+@media (max-width: 768px) {
+    .header__burger {
+        display: block;
+    }
+ 
+    .header__nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        padding: 20px;
+        border-bottom: 2px solid #dcdcdc;
+        gap: 15px;
+        z-index: 10;
+    }
+ 
+    .header__nav--open {
+        display: flex;
+    }
+ 
+    .genres__grid, .novelties__list, .catalog-grid, .dashboard, .dashboard__main .catalog-grid {
+        grid-template-columns: 1fr;
+    }
+ 
+    .promo {
+        padding: 40px 15px;
+    }
+ 
+    .promo__title {
+        font-size: 1.8rem;
+    }
+ 
+    .promo__search-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+ 
+    .promo__input {
+        border-right: 1px solid #cccccc;
+        padding: 12px;
+    }
+ 
+    .promo__button {
+        padding: 12px;
+    }
+ 
+    .section-title {
+        font-size: 1.5rem;
+    }
+ 
+    .footer__container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/* --- СТРАНИЦА ОШИБКИ 404 --- */
+.error-page {
+    text-align: center;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+}
+
+.error-page__code {
+    font-size: 120px;
+    font-weight: bold;
+    line-height: 1;
+    color: #7e3f00;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.error-page__title {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #111111;
+}
+
+.error-page__text {
+    font-size: 16px;
+    color: #666666;
+    max-width: 450px;
+    margin-bottom: 30px;
+}
+
+.error-page__btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #7e3f00; /* Твой коричневый */
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.error-page__btn:hover {
+    background-color: #5c2e00; 
+}
+
+/* Адаптив для мобилок */
+@media (max-width: 768px) {
+    .error-page__code {
+        font-size: 80px;
+    }
+    .error-page__title {
+        font-size: 22px;
+    }
+    .error-page__text {
+        font-size: 14px;
+    }
+}
