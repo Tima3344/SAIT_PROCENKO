@@ -24,7 +24,7 @@
     <main class="main-content">
         <section class="promo">
             <h1 class="promo__title">НАЙДИТЕ СВОЮ КНИГУ</h1>
-            <form class="promo__search-form" action="products.html" method="GET">
+            <form class="promo__search-form">
                 <input type="text" class="promo__input" placeholder="Поиск книг, авторов, жанров..." required>
                 <button type="submit" class="promo__button">Найти</button>
             </form>
@@ -56,7 +56,7 @@
                     <p class="book-card__author">М. А. Булгаков</p>
                     <span class="book-card__tag">Классика</span>
                     <div class="book-card__buttons">
-                        <a href="products.html" class="book-card__button book-card__button--primary">Подробнее</a>
+                        <button class="book-card__button book-card__button--primary">Подробнее</button>
                     </div>
                 </article>
 
@@ -68,7 +68,7 @@
                     <p class="book-card__author">Фрэнк Герберт</p>
                     <span class="book-card__tag">Фантастика</span>
                     <div class="book-card__buttons">
-                        <a href="products.html" class="book-card__button book-card__button--primary">Подробнее</a>
+                        <button class="book-card__button book-card__button--primary">Подробнее</button>
                     </div>
                 </article>
 
@@ -80,7 +80,7 @@
                     <p class="book-card__author">Джейн Остин</p>
                     <span class="book-card__tag">Роман</span>
                     <div class="book-card__buttons">
-                        <a href="products.html" class="book-card__button book-card__button--primary">Подробнее</a>
+                        <button class="book-card__button book-card__button--primary">Подробнее</button>
                     </div>
                 </article>
 
@@ -92,9 +92,41 @@
                     <p class="book-card__author">Роберт Мартин</p>
                     <span class="book-card__tag">IT литература</span>
                     <div class="book-card__buttons">
-                        <a href="products.html" class="book-card__button book-card__button--primary">Подробнее</a>
+                        <button class="book-card__button book-card__button--primary">Подробнее</button>
                     </div>
                 </article>
+            </div>
+        </section>
+
+        <section class="about-cards">
+            <h2 class="section-title">О библиотеке</h2>
+            <div class="about-cards__grid">
+                <div class="about-card">
+                    <h3 class="about-card__title">Электронный каталог</h3>
+                    <p class="about-card__text">LIBRIFOLIO помогает читателям находить книги, отслеживать их наличие и управлять списком чтения.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="advantages-cards">
+            <h2 class="section-title">Наши преимущества</h2>
+            <div class="advantages-cards__grid">
+                <div class="advantage-card">
+                    <h3 class="advantage-card__title">Большой выбор</h3>
+                    <p class="advantage-card__text">Тысячи книг разных жанров и авторов</p>
+                </div>
+                <div class="advantage-card">
+                    <h3 class="advantage-card__title">Удобный поиск</h3>
+                    <p class="advantage-card__text">Поиск по названию, автору или жанру</p>
+                </div>
+                <div class="advantage-card">
+                    <h3 class="advantage-card__title">Личный кабинет</h3>
+                    <p class="advantage-card__text">История чтения и список избранного</p>
+                </div>
+                <div class="advantage-card">
+                    <h3 class="advantage-card__title">Новинки недели</h3>
+                    <p class="advantage-card__text">Еженедельное обновление каталога</p>
+                </div>
             </div>
         </section>
     </main>

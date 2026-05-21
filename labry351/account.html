@@ -22,61 +22,74 @@
     </header>
 
     <main class="main-content">
-        <div class="dashboard">
-            
+        <div id="guestContent" class="form-box" style="text-align: center;">
+            <h2 class="form-box__title">Вы не авторизованы</h2>
+            <p>Пожалуйста, <a href="registration.html">зарегистрируйтесь</a> или <a href="registration.html">войдите</a> в аккаунт</p>
+            <a href="registration.html" class="form-box__submit-btn" style="display: inline-block; margin-top: 20px;">Регистрация</a>
+        </div>
+
+        <div id="userContent" class="dashboard">
             <aside class="dashboard__sidebar">
                 <div class="user-profile">
-                    <div class="user-profile__avatar">
-                        <img src="images/avatar.jpg" alt="Аватар пользователя" class="user-profile__img">
-                    </div>
-                    <h2 class="user-profile__name">Алексей</h2>
+                    <div class="user-profile__avatar" id="userAvatar"></div>
+                    <input type="file" id="avatarUpload" accept="image/jpeg, image/png, image/jpg" style="display: none;">
+                    <button id="uploadAvatarBtn" class="dashboard__link" style="margin-top: 10px; cursor: pointer;">Загрузить аватар</button>
+                    <h2 class="user-profile__name" id="userName">Пользователь</h2>
+                    <p class="user-profile__email" id="userEmail"></p>
                 </div>
                 <nav class="dashboard__nav">
-                    <a href="#" class="dashboard__link dashboard__link--active">Моя полка</a>
-                    <a href="#" class="dashboard__link">Настройки</a>
+                    <a href="#" class="dashboard__link dashboard__link--active" id="myBooksLink">Моя полка</a>
+                    <a href="#" class="dashboard__link" id="settingsLink">Настройки</a>
                 </nav>
-                <button class="dashboard__logout-btn">Выйти</button>
+                <button class="dashboard__logout-btn" id="logoutBtn">Выйти</button>
             </aside>
 
             <section class="dashboard__main">
-                <h2 class="section-title">Мои избранные книги</h2>
-                
-                <div class="catalog-grid">
-                    <article class="book-card">
-                        <div class="book-card__image-wrapper">
-                            <img src="images/book2.jpg" alt="Обложка" class="book-card__image">
+                <div id="myBooksSection">
+                    <h2 class="section-title">Мои избранные книги</h2>
+                    <div class="catalog-grid" id="favoritesGrid"></div>
+
+                    <h2 class="section-title" style="margin-top: 40px;">История выданных книг</h2>
+                    <div class="history-list">
+                        <div class="history-item">
+                            <span class="history-item__book">Мастер и Маргарита</span>
+                            <span class="history-item__date">15.03.2026</span>
+                            <span class="history-item__status">Возвращена</span>
                         </div>
-                        <h3 class="book-card__title">Дюна</h3>
-                        <p class="book-card__author">Фрэнк Герберт</p>
-                        <button class="book-card__button book-card__button--primary">Читать</button>
-                    </article>
-                    
-                    <article class="book-card">
-                        <div class="book-card__image-wrapper">
-                            <img src="images/book1.jpg" alt="Обложка" class="book-card__image">
+                        <div class="history-item">
+                            <span class="history-item__book">Дюна</span>
+                            <span class="history-item__date">01.02.2026</span>
+                            <span class="history-item__status">Возвращена</span>
                         </div>
-                        <h3 class="book-card__title">Мастер и Маргарита</h3>
-                        <p class="book-card__author">М. А. Булгаков</p>
-                        <button class="book-card__button book-card__button--primary">Читать</button>
-                    </article>
+                        <div class="history-item">
+                            <span class="history-item__book">Чистый код</span>
+                            <span class="history-item__date">10.03.2026</span>
+                            <span class="history-item__status">На руках</span>
+                        </div>
+                    </div>
                 </div>
 
-                <h2 class="section-title" style="margin-top: 40px;">Настройки профиля</h2>
-                <div class="account-form-box">
-                    <form novalidate>
-                        <div class="form-group">
-                            <label class="form-group__label">Имя</label>
-                            <input class="form-group__input" type="text" value="Алексей">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-group__label">Новый пароль</label>
-                            <input class="form-group__input" type="password" placeholder="••••••••">
-                        </div>
-                        <button class="form-box__submit-btn" type="button" style="max-width: 200px;">Сохранить изменения</button>
-                    </form>
+                <div id="settingsSection" style="display: none;">
+                    <h2 class="section-title">Настройки профиля</h2>
+                    <div class="account-form-box">
+                        <form id="accountForm" novalidate>
+                            <div class="form-group">
+                                <label class="form-group__label">Имя</label>
+                                <input class="form-group__input" type="text" id="profileName">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-group__label">Email</label>
+                                <input class="form-group__input" type="email" id="profileEmail">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-group__label">Новый пароль</label>
+                                <input class="form-group__input" type="password" id="profilePassword" placeholder="Оставьте пустым, чтобы не менять">
+                            </div>
+                            <button class="form-box__submit-btn" type="submit" style="max-width: 200px;">Сохранить изменения</button>
+                        </form>
+                    </div>
                 </div>
             </section>
-
         </div>
     </main>
 

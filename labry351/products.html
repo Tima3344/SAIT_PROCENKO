@@ -25,18 +25,20 @@
         <h1 class="section-title">Каталог книг</h1>
 
         <section class="catalog-panel">
-            <input type="text" class="catalog-panel__search" placeholder="Поиск книг, авторов, жанров...">
-            <select class="catalog-panel__select">
+            <input type="text" class="catalog-panel__search" id="catalogSearch" placeholder="Поиск книг, авторов, жанров...">
+            <select class="catalog-panel__select" id="catalogFilter">
                 <option value="all">Все жанры</option>
-                <option value="classic">Классика</option>
-                <option value="sci-fi">Фантастика</option>
+                <option value="классика">Классика</option>
+                <option value="фантастика">Фантастика</option>
+                <option value="роман">Роман</option>
+                <option value="it литература">IT литература</option>
             </select>
         </section>
 
-        <section class="catalog-grid">
-            <article class="book-card">
+        <section class="catalog-grid" id="catalogGrid">
+            <article class="book-card" data-title="Мастер и Маргарита" data-author="Булгаков" data-tag="классика">
                 <div class="book-card__image-wrapper">
-                    <img src="images/book1.jpg" alt="Обложка" class="book-card__image">
+                    <img src="images/cover.jpg" alt="Обложка" class="book-card__image">
                 </div>
                 <h3 class="book-card__title">Мастер и Маргарита</h3>
                 <p class="book-card__author">М. А. Булгаков</p>
@@ -47,9 +49,9 @@
                 </div>
             </article>
 
-            <article class="book-card">
+            <article class="book-card" data-title="Дюна" data-author="Герберт" data-tag="фантастика">
                 <div class="book-card__image-wrapper">
-                    <img src="images/book2.jpg" alt="Обложка" class="book-card__image">
+                    <img src="images/Duna.jpg" alt="Обложка" class="book-card__image">
                 </div>
                 <h3 class="book-card__title">Дюна</h3>
                 <p class="book-card__author">Фрэнк Герберт</p>
@@ -60,9 +62,9 @@
                 </div>
             </article>
 
-            <article class="book-card">
+            <article class="book-card" data-title="Гордость и предубеждение" data-author="Остин" data-tag="роман">
                 <div class="book-card__image-wrapper">
-                    <img src="images/book3.jpg" alt="Обложка" class="book-card__image">
+                    <img src="images/gor.jpg" alt="Обложка" class="book-card__image">
                 </div>
                 <h3 class="book-card__title">Гордость и предубеждение</h3>
                 <p class="book-card__author">Джейн Остин</p>
@@ -73,9 +75,9 @@
                 </div>
             </article>
 
-            <article class="book-card">
+            <article class="book-card" data-title="Чистый код" data-author="Мартин" data-tag="it литература">
                 <div class="book-card__image-wrapper">
-                    <img src="images/book4.jpg" alt="Обложка" class="book-card__image">
+                    <img src="images/cod.webp" alt="Обложка" class="book-card__image">
                 </div>
                 <h3 class="book-card__title">Чистый код</h3>
                 <p class="book-card__author">Роберт Мартин</p>
@@ -86,9 +88,9 @@
                 </div>
             </article>
 
-            <article class="book-card">
+            <article class="book-card" data-title="Собачье сердце" data-author="Булгаков" data-tag="классика">
                 <div class="book-card__image-wrapper">
-                    <img src="images/book1.jpg" alt="Обложка" class="book-card__image">
+                    <img src="images/serd.webp" alt="Обложка" class="book-card__image">
                 </div>
                 <h3 class="book-card__title">Собачье сердце</h3>
                 <p class="book-card__author">М. А. Булгаков</p>
@@ -99,9 +101,9 @@
                 </div>
             </article>
 
-            <article class="book-card">
+            <article class="book-card" data-title="Мессия Дюны" data-author="Герберт" data-tag="фантастика">
                 <div class="book-card__image-wrapper">
-                    <img src="images/book2.jpg" alt="Обложка" class="book-card__image">
+                    <img src="images/dun2.jpg" alt="Обложка" class="book-card__image">
                 </div>
                 <h3 class="book-card__title">Мессия Дюны</h3>
                 <p class="book-card__author">Фрэнк Герберт</p>
@@ -112,9 +114,9 @@
                 </div>
             </article>
 
-            <article class="book-card">
+            <article class="book-card" data-title="Чувство и чувствительность" data-author="Остин" data-tag="роман">
                 <div class="book-card__image-wrapper">
-                    <img src="images/book3.jpg" alt="Обложка" class="book-card__image">
+                    <img src="images/chyv.webp" alt="Обложка" class="book-card__image">
                 </div>
                 <h3 class="book-card__title">Чувство и чувствительность</h3>
                 <p class="book-card__author">Джейн Остин</p>
@@ -125,9 +127,9 @@
                 </div>
             </article>
 
-            <article class="book-card">
+            <article class="book-card" data-title="Идеальный программист" data-author="Мартин" data-tag="it литература">
                 <div class="book-card__image-wrapper">
-                    <img src="images/book4.jpg" alt="Обложка" class="book-card__image">
+                    <img src="images/prog.webp" alt="Обложка" class="book-card__image">
                 </div>
                 <h3 class="book-card__title">Идеальный программист</h3>
                 <p class="book-card__author">Роберт Мартин</p>
@@ -137,13 +139,37 @@
                     <button class="book-card__button book-card__button--secondary book-card__button--fav">В избранное</button>
                 </div>
             </article>
+
+            <article class="book-card" data-title="Преступление и наказание" data-author="Достоевский" data-tag="классика">
+                <div class="book-card__image-wrapper">
+                    <img src="images/prest.webp" alt="Обложка" class="book-card__image">
+                </div>
+                <h3 class="book-card__title">Преступление и наказание</h3>
+                <p class="book-card__author">Ф. М. Достоевский</p>
+                <span class="book-card__tag">Классика</span>
+                <div class="book-card__buttons">
+                    <button class="book-card__button book-card__button--primary">Подробнее</button>
+                    <button class="book-card__button book-card__button--secondary book-card__button--fav">В избранное</button>
+                </div>
+            </article>
+
+            <article class="book-card" data-title="1984" data-author="Оруэлл" data-tag="фантастика">
+                <div class="book-card__image-wrapper">
+                    <img src="images/1984.jpg" alt="Обложка" class="book-card__image">
+                </div>
+                <h3 class="book-card__title">1984</h3>
+                <p class="book-card__author">Джордж Оруэлл</p>
+                <span class="book-card__tag">Фантастика</span>
+                <div class="book-card__buttons">
+                    <button class="book-card__button book-card__button--primary">Подробнее</button>
+                    <button class="book-card__button book-card__button--secondary book-card__button--fav">В избранное</button>
+                </div>
+            </article>
         </section>
 
         <div class="pagination">
             <button class="pagination__button" id="prevPage">Назад</button>
-            <button class="pagination__button pagination__button--active page-num">1</button>
-            <button class="pagination__button page-num">2</button>
-            <button class="pagination__button id="nextPage"">Вперед</button>
+            <button class="pagination__button" id="nextPage">Вперед</button>
         </div>
     </main>
 
